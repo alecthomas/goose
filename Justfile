@@ -20,7 +20,7 @@ run-ui: download-tokenizers
     @just release
     @echo "Running UI..."
     cd ui/desktop && npm install && npm run start-gui
-    
+
 # Run server
 run-server:
     @echo "Running server..."
@@ -29,4 +29,4 @@ run-server:
 # Download tokenizer files if they don't exist
 download-tokenizers:
     @echo "Checking and downloading tokenizer files..."
-    ./download_tokenizers.sh
+    cargo run --bin force-build
